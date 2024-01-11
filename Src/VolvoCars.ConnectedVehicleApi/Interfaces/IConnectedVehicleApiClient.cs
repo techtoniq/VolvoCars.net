@@ -1,7 +1,9 @@
-﻿namespace VolvoCars.ConnectedVehicleApi.Interfaces
+﻿using System.Text.Json.Nodes;
+
+namespace VolvoCars.ConnectedVehicleApi.Interfaces
 {
     public interface IConnectedVehicleApiClient
     {
-        ICollection<string> GetAllVehicles();
+        Task<JsonObject?> GetAllVehiclesAsync();
     }
 }

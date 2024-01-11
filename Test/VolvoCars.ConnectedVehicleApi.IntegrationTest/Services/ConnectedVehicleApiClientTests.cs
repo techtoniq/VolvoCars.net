@@ -1,18 +1,27 @@
-﻿using System.Configuration;
+﻿using FluentAssertions;
+using Microsoft.Extensions.Configuration;
+using VolvoCars.ConnectedVehicleApi.Interfaces;
 using VolvoCars.ConnectedVehicleApi.Services;
 
 namespace VolvoCars.ConnectedVehicleApi.IntegrationTest.Services
 {
     public class ConnectedVehicleApiClientTests
     {
-        [Test]
-        public void Foo()
+        private IConnectedVehicleApiClient _apiClient;
+
+        [OneTimeSetUp]
+        public void Init()
         {
-            var x = ConfigurationManager.AppSettings["configCheck"];
+            var config = new ConfigurationBuilder().AddJsonFile("AppSettings.IntegrationTest.json").Build();
+            _apiClient = new ConnectedVehicleApiClient(config["apiKey"], config["accessToken"]);
+        }
 
-            var sut = new ConnectedVehicleApiClient("tbc", "tbc");
+        [Test]
+        public async Task ProveConnectivity()
+        {           
+            var result = await _apiClient.GetAllVehiclesAsync();
 
-            var result = sut.GetAllVehicles();
+            result.Should().NotBeNull();
         }
     }
 }
