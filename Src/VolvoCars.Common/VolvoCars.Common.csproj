@@ -6,12 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Domain\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\VolvoCars.Common\VolvoCars.Common.csproj" />
-  </ItemGroup>
-
 </Project>

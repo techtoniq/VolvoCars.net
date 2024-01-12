@@ -13,7 +13,7 @@ namespace VolvoCars.ConnectedVehicleApi.IntegrationTest.Services
         public void Init()
         {
             var config = new ConfigurationBuilder().AddJsonFile("AppSettings.IntegrationTest.json").Build();
-            _apiClient = new ConnectedVehicleApiClient(config["apiKey"], config["accessToken"]);
+            _apiClient = new ConnectedVehicleApiClient(config["vccApiKey"], "https://api.volvocars.com/connected-vehicle/v2/", config["connectedApiAccessToken"]);
         }
 
         [Test]

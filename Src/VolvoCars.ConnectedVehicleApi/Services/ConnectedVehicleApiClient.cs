@@ -1,34 +1,24 @@
-﻿using System.Net.Http.Headers;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Text.Json.Nodes;
+using VolvoCars.Common.Services;
 using VolvoCars.ConnectedVehicleApi.Interfaces;
 
 namespace VolvoCars.ConnectedVehicleApi.Services
 {
-    public class ConnectedVehicleApiClient : IConnectedVehicleApiClient
+    public class ConnectedVehicleApiClient : ApiClientBase, IConnectedVehicleApiClient
     {
-        private readonly string _apiKey;
         private readonly string _accessToken;
 
-        public ConnectedVehicleApiClient(string vccApiKey, string accessToken)
+        public ConnectedVehicleApiClient(string vccApiKey, string apiBaseUrl, string accessToken)
+            : base(vccApiKey, apiBaseUrl)
         {
-            _apiKey = vccApiKey;
             _accessToken = accessToken;
         }
 
         public async Task<JsonObject?> GetAllVehiclesAsync()
         {
-            var client = new HttpClient
-            {
-                BaseAddress = new Uri("https://api.volvocars.com/connected-vehicle/v2/"),
-                Timeout = new TimeSpan(0, 0, 0, 0, -1)
-            };
-
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                                 new MediaTypeWithQualityHeaderValue("application/json"));
+            var client = CreateHttpClient();
             client.DefaultRequestHeaders.Add("authorization", $"Bearer {_accessToken}");
-            client.DefaultRequestHeaders.Add("vcc-api-key", _apiKey);
 
             return await client.GetFromJsonAsync<JsonObject>("vehicles");
         }
