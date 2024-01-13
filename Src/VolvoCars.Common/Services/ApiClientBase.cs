@@ -36,7 +36,7 @@ namespace VolvoCars.Common.Services
 
         #region Methods
 
-        protected HttpClient CreateHttpClient()
+        protected virtual HttpClient CreateHttpClient()
         {
             var client = new HttpClient
             {
@@ -48,7 +48,6 @@ namespace VolvoCars.Common.Services
             client.DefaultRequestHeaders.Accept.Add(
                                     new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("vcc-api-key", _apiKey);
-            //client.DefaultRequestHeaders.Add("authorization", $"Bearer {_accessToken}");
 
             return client;
         }
