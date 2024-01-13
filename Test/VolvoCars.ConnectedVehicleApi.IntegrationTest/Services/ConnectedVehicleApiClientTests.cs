@@ -24,5 +24,13 @@ namespace VolvoCars.ConnectedVehicleApi.IntegrationTest.Services
             data.Should().NotBeNull();
             data.Should().NotBeEmpty();
         }
+
+        [Test]
+        public async Task GetVehicleDetailsAsync()
+        {
+            var data = await _apiClient.GetVehicleDetailsAsync(new Common.Domain.Vin("YV1XZEDVEN2703701"));
+
+            data.Should().NotBeNull();
+        }
     }
 }
