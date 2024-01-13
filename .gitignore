@@ -397,3 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /Test/VolvoCars.ConnectedVehicleApi.IntegrationTest/AppSettings.IntegrationTest.json
+/Test/VolvoCars.EnergyApi.IntegrationTest/AppSettings.IntegrationTest.json
