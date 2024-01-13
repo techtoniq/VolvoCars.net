@@ -1,9 +1,9 @@
-﻿using System.Text.Json.Nodes;
+﻿using VolvoCars.Common.Domain;
 
 namespace VolvoCars.ConnectedVehicleApi.Interfaces
 {
     public interface IConnectedVehicleApiClient
     {
-        Task<JsonObject?> GetAllVehiclesAsync();
+        Task<IEnumerable<Vin>> GetAllVehiclesAsync();
     }
 }

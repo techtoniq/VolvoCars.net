@@ -1,6 +1,7 @@
-﻿using System.Net.Http.Json;
-using System.Text.Json.Nodes;
+﻿using Newtonsoft.Json;
+using VolvoCars.Common.Domain;
 using VolvoCars.Common.Services;
+using VolvoCars.ConnectedVehicleApi.Domain;
 using VolvoCars.ConnectedVehicleApi.Interfaces;
 
 namespace VolvoCars.ConnectedVehicleApi.Services
@@ -15,12 +16,15 @@ namespace VolvoCars.ConnectedVehicleApi.Services
             _accessToken = accessToken;
         }
 
-        public async Task<JsonObject?> GetAllVehiclesAsync()
+        public async Task<IEnumerable<Vin>> GetAllVehiclesAsync()
         {
             var client = CreateHttpClient();
             client.DefaultRequestHeaders.Add("authorization", $"Bearer {_accessToken}");
 
-            return await client.GetFromJsonAsync<JsonObject>("vehicles");
+            var response = await client.GetStringAsync("vehicles");
+            var dto = JsonConvert.DeserializeObject<GetAllVehiclesDto>(response);
+
+            return dto!.Data;
         }
     }
 }

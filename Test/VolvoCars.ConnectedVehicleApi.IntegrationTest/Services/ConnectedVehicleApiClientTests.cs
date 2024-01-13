@@ -17,11 +17,12 @@ namespace VolvoCars.ConnectedVehicleApi.IntegrationTest.Services
         }
 
         [Test]
-        public async Task ProveConnectivity()
+        public async Task GetAllVehiclesAsync()
         {           
-            var result = await _apiClient.GetAllVehiclesAsync();
+            var data = await _apiClient.GetAllVehiclesAsync();
 
-            result.Should().NotBeNull();
+            data.Should().NotBeNull();
+            data.Should().NotBeEmpty();
         }
     }
 }
