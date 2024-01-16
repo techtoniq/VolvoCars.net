@@ -2,6 +2,6 @@
 {
     public class RechargeStatus
     {
-        public BatteryChargeLevel BatteryChargeLevel { get; set; }
+        public BatteryChargeLevel BatteryChargeLevel { get; set; } = default!;
     }
 }

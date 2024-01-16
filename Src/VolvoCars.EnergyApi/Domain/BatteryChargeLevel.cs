@@ -2,8 +2,8 @@
 {
     public class BatteryChargeLevel
     {
-        public string Value {  get; set; }
-        public string Unit { get; set; }
-        public string Timestamp { get; set; }
+        public string Value {  get; set; } = default!;
+        public string Unit { get; set; } = default!;
+        public string Timestamp { get; set; } = default!;
     }
 }
