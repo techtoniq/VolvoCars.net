@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 /Test/VolvoCars.ConnectedVehicleApi.IntegrationTest/AppSettings.IntegrationTest.json
 /Test/VolvoCars.EnergyApi.IntegrationTest/AppSettings.IntegrationTest.json
+/Test/VolvoCars.LocationApi.IntegrationTest/AppSettings.IntegrationTest.json

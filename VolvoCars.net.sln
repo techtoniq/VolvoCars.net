@@ -20,9 +20,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoCars.ConnectedVehicleA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoCars.Common", "Src\VolvoCars.Common\VolvoCars.Common.csproj", "{7CCA9B8E-9DC6-4F2F-AF83-B8FFD63CA7A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoCars.EnergyApi", "Src\VolvoCars.EnergyApi\VolvoCars.EnergyApi.csproj", "{E09DDD4F-F9E9-49C2-AC49-675483D4C178}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoCars.EnergyApi", "Src\VolvoCars.EnergyApi\VolvoCars.EnergyApi.csproj", "{E09DDD4F-F9E9-49C2-AC49-675483D4C178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoCars.EnergyApi.IntegrationTest", "Test\VolvoCars.EnergyApi.IntegrationTest\VolvoCars.EnergyApi.IntegrationTest.csproj", "{31D78B4F-571C-4BD1-AEC1-6AF4237EC6A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolvoCars.EnergyApi.IntegrationTest", "Test\VolvoCars.EnergyApi.IntegrationTest\VolvoCars.EnergyApi.IntegrationTest.csproj", "{31D78B4F-571C-4BD1-AEC1-6AF4237EC6A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoCars.LocationApi", "Src\VolvoCars.LocationApi\VolvoCars.LocationApi.csproj", "{756A083E-D4E8-4F2C-A832-D04BE9020187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolvoCars.LocationApi.IntegrationTest", "Test\VolvoCars.LocationApi.IntegrationTest\VolvoCars.LocationApi.IntegrationTest.csproj", "{A9EEF05E-950E-4B13-8558-6AF77E1FE5A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +54,14 @@ Global
 		{31D78B4F-571C-4BD1-AEC1-6AF4237EC6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31D78B4F-571C-4BD1-AEC1-6AF4237EC6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31D78B4F-571C-4BD1-AEC1-6AF4237EC6A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{756A083E-D4E8-4F2C-A832-D04BE9020187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{756A083E-D4E8-4F2C-A832-D04BE9020187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{756A083E-D4E8-4F2C-A832-D04BE9020187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{756A083E-D4E8-4F2C-A832-D04BE9020187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EEF05E-950E-4B13-8558-6AF77E1FE5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9EEF05E-950E-4B13-8558-6AF77E1FE5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9EEF05E-950E-4B13-8558-6AF77E1FE5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9EEF05E-950E-4B13-8558-6AF77E1FE5A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +72,8 @@ Global
 		{7CCA9B8E-9DC6-4F2F-AF83-B8FFD63CA7A0} = {71E9B8E8-3E84-4AD8-92C8-13576F6EE523}
 		{E09DDD4F-F9E9-49C2-AC49-675483D4C178} = {71E9B8E8-3E84-4AD8-92C8-13576F6EE523}
 		{31D78B4F-571C-4BD1-AEC1-6AF4237EC6A6} = {873BE664-70A7-4EE7-A54F-1541278097F9}
+		{756A083E-D4E8-4F2C-A832-D04BE9020187} = {71E9B8E8-3E84-4AD8-92C8-13576F6EE523}
+		{A9EEF05E-950E-4B13-8558-6AF77E1FE5A3} = {873BE664-70A7-4EE7-A54F-1541278097F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {38839A52-8162-46A0-9686-7757603A4B44}
